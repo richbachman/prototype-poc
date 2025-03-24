@@ -1,7 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Button } from "~/components/ui/button"
-import { Label } from "~/components/ui/label"
-import { Input } from "~/components/ui/input"
+import { Button } from "~/components/ui/button";
+import { Label } from "~/components/ui/label";
+import { Input } from "~/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -10,12 +10,9 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import {
-  Alert,
-  AlertTitle,
-} from "~/components/ui/alert"
-import { Plus } from "lucide-react"
+} from "~/components/ui/select";
+import { Alert, AlertTitle } from "~/components/ui/alert";
+import { Plus } from "lucide-react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,8 +23,10 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="grid grid-cols-sidebar bg-background h-screen font-sans">
-      <div className="bg-gray-200	h-screen border-solid border-r-2 border-gray-300">Sidebar</div>
+    <div className="grid grid-cols-sidebar bg-background h-screen font-sans overflow-hidden">
+      <div className="bg-gray-200	h-screen border-solid border-r-2 border-gray-300">
+        Sidebar
+      </div>
       <div className="grid h-full grid-rows-[auto_1fr_auto]">
         <div className="flex justify-center py-6 border-solid border-b-2 border-gray-300">
           <div className="flex items-center justify-between min-w-[680px]">
@@ -43,11 +42,16 @@ export default function Index() {
             <div className="flex flex-col gap-2">
               <Label htmlFor="destination-schema">Destination schema</Label>
               <Input id="destination-schema" />
-              <p className="text-xs text-muted-foreground">Appears in your destination as shopify and cannot be changed after you test the connection or save the form for later.</p>
+              <p className="text-xs text-muted-foreground">
+                Appears in your destination as shopify and cannot be changed
+                after you test the connection or save the form for later.
+              </p>
             </div>
 
             <div className="flex flex-col gap-2">
-              <Label htmlFor="historical-sync">Historical sync time frame</Label>
+              <Label htmlFor="historical-sync">
+                Historical sync time frame
+              </Label>
               <Select>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a fruit" />
@@ -68,14 +72,18 @@ export default function Index() {
             <div className="flex flex-col gap-2">
               <Label htmlFor="shop-name">Shop Name</Label>
               <Input id="shop-name" disabled />
-              <p className="text-xs text-muted-foreground">Your shop name will automatically be populated after you install the Fivetran App from the Shopify app store.</p>
+              <p className="text-xs text-muted-foreground">
+                Your shop name will automatically be populated after you install
+                the Fivetran App from the Shopify app store.
+              </p>
             </div>
 
             <Alert>
               <AlertTitle>
-                Click here to install the Fivetran app from the Shopify app store
+                Click here to install the Fivetran app from the Shopify app
+                store
               </AlertTitle>
-          </Alert>
+            </Alert>
           </div>
         </div>
         <div className="flex justify-center py-6 border-solid border-t-2 border-gray-300">
