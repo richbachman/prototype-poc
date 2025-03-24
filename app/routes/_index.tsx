@@ -26,9 +26,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="grid grid-cols-sidebar bg-background h-screen font-sans">
+    <div className="grid grid-cols-sidebar bg-background h-screen font-sans overflow-hidden">
       <div className="bg-gray-200	h-screen border-solid border-r-2 border-gray-300">Sidebar</div>
-      <div className="grid h-full grid-rows-[auto_1fr_auto]">
+      <div className="grid h-screen grid-rows-[auto_1fr_auto]">
         <div className="flex justify-center py-6 border-solid border-b-2 border-gray-300">
           <div className="flex items-center justify-between min-w-[680px]">
             <h1 className="text-3xl">Shopify</h1>
@@ -38,7 +38,7 @@ export default function Index() {
             </Button>
           </div>
         </div>
-        <div className="overflow-auto flex justify-center py-6">
+        <div className="overflow-auto flex justify-center py-6 mb-6">
           <div className="flex flex-col gap-8 min-w-[680px]">
             <div className="flex flex-col gap-2">
               <Label htmlFor="destination-schema">Destination schema</Label>
