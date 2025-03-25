@@ -22,8 +22,7 @@ const selectItems = ['IAM Role', 'Access key and secret', 'Public bucket']
 
 export default function Index() {
   return (
-    <div className="grid grid-cols-sidebar bg-background h-screen font-sans overflow-hidden">
-      <div className="bg-gray-200	h-screen border-solid border-r-2 border-gray-300">Sidebar</div>
+    <div className="h-screen font-sans overflow-hidden">
       <div className="grid h-screen grid-rows-[auto_1fr_auto]">
         <div className="flex justify-center py-6 border-solid border-b-2 border-gray-300">
           <div className="flex items-center justify-between min-w-[680px]">
