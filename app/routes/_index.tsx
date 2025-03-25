@@ -1,16 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button"
-import { Label } from "~/components/ui/label"
-import { Input } from "~/components/ui/input"
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select"
+import { Separator } from "~/components/ui/separator"
+import { Input } from "~/components/Input"
+import { Select } from "~/components/Select"
+import { Heading } from "~/components/Heading"
+import { Text } from "~/components/Text"
 import {
   Alert,
   AlertTitle,
@@ -23,6 +17,8 @@ export const meta: MetaFunction = () => {
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
+
+const selectItems = ['IAM Role', 'Access key and secret', 'Public bucket']
 
 export default function Index() {
   return (
@@ -40,42 +36,20 @@ export default function Index() {
         </div>
         <div className="overflow-auto flex justify-center py-6 mb-6">
           <div className="flex flex-col gap-8 min-w-[680px]">
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="destination-schema">Destination schema</Label>
-              <Input id="destination-schema" />
-              <p className="text-xs text-muted-foreground">Appears in your destination as shopify and cannot be changed after you test the connection or save the form for later.</p>
-            </div>
+            <Input label="Destination schema" helpText="Appears in your destination as shopify and cannot be changed after you test the connection or save the form for later." />
 
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="historical-sync">Historical sync time frame</Label>
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a fruit" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Fruits</SelectLabel>
-                    <SelectItem value="apple">Apple</SelectItem>
-                    <SelectItem value="banana">Banana</SelectItem>
-                    <SelectItem value="blueberry">Blueberry</SelectItem>
-                    <SelectItem value="grapes">Grapes</SelectItem>
-                    <SelectItem value="pineapple">Pineapple</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            </div>
+            <Select
+              label="Historical sync time frame"
+              items={selectItems}
+            />
 
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="shop-name">Shop Name</Label>
-              <Input id="shop-name" disabled />
-              <p className="text-xs text-muted-foreground">Your shop name will automatically be populated after you install the Fivetran App from the Shopify app store.</p>
-            </div>
+            <Input label="Shop Name" helpText="Your shop name will automatically be populated after you install the Fivetran App from the Shopify app store." />
 
             <Alert>
               <AlertTitle>
                 Click here to install the Fivetran app from the Shopify app store
               </AlertTitle>
-          </Alert>
+            </Alert>
           </div>
         </div>
         <div className="flex justify-center py-6 border-solid border-t-2 border-gray-300">
